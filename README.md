@@ -44,7 +44,7 @@ Results on TextVQA, DocVQA, OCRBench, OpenCompass, MME, MMBench, MMMU, MathVista
 
 Results of LLaVABench in multiple languages. 
 <div align="center">
-    <img src="assets/llavabench_compare.png" width="66%" />
+    <img src="assets/llavabench_compare.png" width="80%" />
 </div>
 
 
