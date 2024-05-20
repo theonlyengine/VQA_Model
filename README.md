@@ -41,20 +41,18 @@ Results on TextVQA, DocVQA, OCRBench, OpenCompass, MME, MMBench, MMMU, MathVista
     <img src=/openbmb/MiniCPM-Llama3-V-2_5/resolve/main/assets/MiniCPM-Llama3-V-2.5-benchmark.png width=140% />
 </div>
 
+
+Results of LLaVABench in multiple languages. 
+<div align="center">
+    <img src="assets/llavabench_compare.png" width="66%" />
+</div>
+
+
 ### Examples <!-- omit in toc -->
 
 <table align="center">
     <p align="center">
-      <img src="assets/minicpmv-llama3-v2.5/case_OCR_en.png" width=95%/>
-    </p>
-    <p align="center">
-      <img src="assets/minicpmv-llama3-v2.5/case_long_img.png" width=95%/>
-    </p>
-    <p align="center">
-      <img src="assets/minicpmv-llama3-v2.5/case_markdown.png" width=95%/>
-    </p>
-    <p align="center">
-      <img src="assets/minicpmv-llama3-v2.5/case_complex_reasoning.png" width=95%/>
+      <img src="assets/minicpmv-llama3-v2.5/cases_all.png" width=95%/>
     </p>
 </table>
 
