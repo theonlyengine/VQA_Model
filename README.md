@@ -45,13 +45,13 @@ Results on TextVQA, DocVQA, OCRBench, OpenCompass, MME, MMBench, MMMU, MathVista
 
 <table align="center">
     <p align="center">
-      <img src="assets/minicpmv-llama3-v2.5/case_markdown.png" width=95%/>
-    </p>
-    <p align="center">
       <img src="assets/minicpmv-llama3-v2.5/case_OCR_en.png" width=95%/>
     </p>
     <p align="center">
       <img src="assets/minicpmv-llama3-v2.5/case_long_img.png" width=95%/>
+    </p>
+    <p align="center">
+      <img src="assets/minicpmv-llama3-v2.5/case_markdown.png" width=95%/>
     </p>
     <p align="center">
       <img src="assets/minicpmv-llama3-v2.5/case_complex_reasoning.png" width=95%/>
