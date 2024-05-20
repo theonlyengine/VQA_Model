@@ -352,6 +352,8 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
         if image is not None and isinstance(copy_msgs[0]['content'], str):
             copy_msgs[0]['content'] = [image, copy_msgs[0]['content']]
 
+        images = []
+        tgt_sizes = []
         for i, msg in enumerate(copy_msgs):
             role = msg["role"]
             content = msg["content"]
@@ -361,8 +363,6 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
             if isinstance(content, str):
                 content = [content]
 
-            images = []
-            tgt_sizes = []
             cur_msgs = []
             for c in content:
                 if isinstance(c, Image.Image):
@@ -387,10 +387,10 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
                 elif isinstance(c, str):
                     cur_msgs.append(c)
 
-            if tgt_sizes:
-                tgt_sizes = torch.vstack(tgt_sizes)
 
             msg['content'] = '\n'.join(cur_msgs)
+        if tgt_sizes:
+            tgt_sizes = torch.vstack(tgt_sizes)
 
         input_ids = tokenizer.apply_chat_template(copy_msgs, tokenize=True, add_generation_prompt=False)
 
