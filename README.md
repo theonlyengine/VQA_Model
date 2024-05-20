@@ -79,8 +79,7 @@ We deploy MiniCPM-Llama3-V 2.5 on end devices. The demo video is the raw screen 
 Click here to try out the Demo of [MiniCPM-Llama3-V 2.5](http://120.92.209.146:8889).
 
 ## Deployment on Mobile Phone
-MiniCPM-Llama3-V 2.5 can be deployed on mobile phones with Android operating systems. 🚀 Try it out [here](https://github.com/OpenBMB/mlc-MiniCPM).
-
+Coming soon.
 
 ## Usage
 Inference using Huggingface transformers on NVIDIA GPUs. Requirements tested on python 3.10：
