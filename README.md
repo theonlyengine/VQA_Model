@@ -4,8 +4,8 @@ language:
 - en
 - zh
 datasets:
-- HaoyeZhang/RLHF-V-Dataset
 - Yirany/UniMM-Chat
+- HaoyeZhang/RLAIF-V-Dataset
 ---
 
 [GitHub](https://github.com/OpenBMB/MiniCPM-V) | [Demo](http://120.92.209.146:8889/)
@@ -136,7 +136,7 @@ Please see the info about MiniCPM-V 2.0 [here](https://huggingface.co/openbmb/Mi
 
 ## Other Multimodal Projects from Our Team
 
-[VisCPM](https://github.com/OpenBMB/VisCPM/tree/main) | [RLHF-V](https://github.com/RLHF-V/RLHF-V) | [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD)
+[VisCPM](https://github.com/OpenBMB/VisCPM/tree/main) | [RLHF-V](https://github.com/RLHF-V/RLHF-V) | [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD)  | [RLAIF-V](https://github.com/RLHF-V/RLAIF-V)
 
 ## Citation
 
