@@ -83,7 +83,7 @@ MiniCPM-Llama3-V 2.5 can be deployed on mobile phones with Android operating sys
 
 
 ## Usage
-Inference using Huggingface transformers on Nivdia GPUs. Requirements tested on python 3.10：
+Inference using Huggingface transformers on NVIDIA GPUs. Requirements tested on python 3.10：
 ```
 Pillow==10.1.0
 torch==2.1.2
