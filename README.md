@@ -58,7 +58,7 @@ Results on TextVQA, DocVQA, OCRBench, OpenCompass, MME, MMBench, MMMU, MathVista
     </p>
 </table>
 
-We deploy MiniCPM-V 2.0 on end devices. The demo video is the raw screen recording on a Xiaomi 14 Pro at double speed.
+We deploy MiniCPM-Llama3-V 2.5 on end devices. The demo video is the raw screen recording on a Xiaomi 14 Pro at double speed.
 
 <table align="center">
     <p align="center">
@@ -67,6 +67,11 @@ We deploy MiniCPM-V 2.0 on end devices. The demo video is the raw screen recordi
     </p>
 </table>
 
+<table align="center">
+    <p align="center">
+      <img src="assets/gif_cases/1-4.gif" width=80%/>
+    </p>
+</table>
 
 
 
