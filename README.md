@@ -121,7 +121,7 @@ Please look at [GitHub](https://github.com/OpenBMB/MiniCPM-V) for more detail ab
 Download the int4 quantized version for lower GPU memory usage:  [MiniCPM-Llama3-V-2_5-int4](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-int4).
 
 ## MiniCPM-V 2.0 <!-- omit in toc -->
-Please see the info about MiniCPM-V 2.0 [here](https://huggingface.co/openbmb/MiniCPM-V).
+Please see the info about MiniCPM-V 2.0 [here](https://huggingface.co/openbmb/MiniCPM-V-2).
 
 ## License
 #### Model License
