@@ -33,12 +33,12 @@ datasets:
 ### Evaluation <!-- omit in toc -->
 
 <div align="center">
-    <img src=assets/MiniCPM-Llama3-V-2.5-peformance.png width=80% />
+    <img src=/openbmb/MiniCPM-Llama3-V-2_5/resolve/main/assets/MiniCPM-Llama3-V-2.5-peformance.png width=80% />
 </div>
 
 Results on TextVQA, DocVQA, OCRBench, OpenCompass, MME, MMBench, MMMU, MathVista, LLaVA Bench, RealWorld QA, Object HalBench.
 <div align="center">
-    <img src=assets/MiniCPM-Llama3-V-2.5-benchmark.png width=140% />
+    <img src=/openbmb/MiniCPM-Llama3-V-2_5/resolve/main/assets/MiniCPM-Llama3-V-2.5-benchmark.png width=140% />
 </div>
 
 ### Examples <!-- omit in toc -->
