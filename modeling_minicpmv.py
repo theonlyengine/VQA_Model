@@ -5,7 +5,6 @@ import torch
 import torchvision
 from copy import deepcopy
 from PIL import Image
-from timm.data import IMAGENET_INCEPTION_MEAN, IMAGENET_INCEPTION_STD
 from torchvision import transforms
 from transformers import LlamaTokenizer, LlamaPreTrainedModel, LlamaForCausalLM, AutoModel, PreTrainedTokenizerFast
 from transformers.models.idefics2.modeling_idefics2 import Idefics2VisionTransformer
@@ -13,6 +12,8 @@ from transformers.models.idefics2.modeling_idefics2 import Idefics2VisionTransfo
 from .configuration_minicpm import MiniCPMVConfig
 from .resampler import Resampler
 
+IMAGENET_INCEPTION_MEAN = (0.5, 0.5, 0.5) # timm.data.IMAGENET_INCEPTION_MEAN
+IMAGENET_INCEPTION_STD = (0.5, 0.5, 0.5)  # timm.data.IMAGENET_INCEPTION_STD
 
 class MiniCPMVPreTrainedModel(LlamaPreTrainedModel):
     config_class = MiniCPMVConfig
