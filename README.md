@@ -7,7 +7,7 @@ datasets:
 - HaoyeZhang/RLAIF-V-Dataset
 ---
 
-[GitHub](https://github.com/OpenBMB/MiniCPM-V) | [Demo](http://120.92.209.146:8889/)
+[GitHub](https://github.com/OpenBMB/MiniCPM-V) | [Demo](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5)
 
 
 ## MiniCPM-Llama3-V 2.5
