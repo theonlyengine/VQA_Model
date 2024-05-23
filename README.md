@@ -383,6 +383,11 @@ print(res)
 
 Please look at [GitHub](https://github.com/OpenBMB/MiniCPM-V) for more detail about usage.
 
+
+## Inference with llama.cpp<a id="llamacpp"></a>
+MiniCPM-Llama3-V 2.5 can run with llama.cpp now! See our fork of [llama.cpp](https://github.com/OpenBMB/llama.cpp/tree/minicpm-v2.5/examples/minicpmv) for more detail.
+
+
 ## Int4 quantized version
 Download the int4 quantized version for lower GPU memory (8GB) usage:  [MiniCPM-Llama3-V-2_5-int4](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-int4).
 
