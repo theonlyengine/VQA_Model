@@ -310,7 +310,7 @@ Results on TextVQA, DocVQA, OCRBench, OpenCompass MultiModal Avg , MME, MMBench,
 
 Evaluation results of multilingual LLaVA Bench 
 <div align="center">
-    <img src="assets/llavabench_compare.png" width="80%" />
+    <img src="assets/minicpmv-llama3-v2.5/llavabench_compare.png" width="80%" />
 </div>
 
 
