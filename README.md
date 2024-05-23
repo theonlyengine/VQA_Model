@@ -12,8 +12,8 @@ datasets:
 
 ## News <!-- omit in toc -->
 
-* [2024.05.23] 🔍 We've released a comprehensive comparison between Phi-3-vision-128k-instruct and MiniCPM-Llama3-V 2.5, including benchmarks evaluations, and multilingual capabilities 🌟📊🌍. Click [here](https://github.com/OpenBMB/MiniCPM-V/docs/compare_with_phi-3_vision.md) to view more details.
-* [2024.05.20] We open-soure MiniCPM-Llama3-V 2.5, it has improved OCR capability and supports 30+ languages, representing the first end-side MLLM achieving GPT-4V level performance! We provide [efficient inference](#deployment-on-mobile-phone) and [simple fine-tuning](https://github.com/OpenBMB/MiniCPM-V/finetune/readme.md). Try it now!
+* [2024.05.23] 🔍 We've released a comprehensive comparison between Phi-3-vision-128k-instruct and MiniCPM-Llama3-V 2.5, including benchmarks evaluations, and multilingual capabilities 🌟📊🌍. Click [here](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/compare_with_phi-3_vision.md) to view more details.
+* [2024.05.20] We open-soure MiniCPM-Llama3-V 2.5, it has improved OCR capability and supports 30+ languages, representing the first end-side MLLM achieving GPT-4V level performance! We provide [efficient inference](#deployment-on-mobile-phone) and [simple fine-tuning](https://github.com/OpenBMB/MiniCPM-V/blob/main/finetune/readme.md). Try it now!
 
 
 ## Model Summary
