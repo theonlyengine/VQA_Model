@@ -50,6 +50,7 @@ datasets:
 ### Evaluation <!-- omit in toc -->
 
 Results on TextVQA, DocVQA, OCRBench, OpenCompass MultiModal Avg , MME, MMBench, MMMU, MathVista, LLaVA Bench, RealWorld QA, Object HalBench.
+<small>
 <table style="margin: 0px auto;">
     <thead>
         <tr>
@@ -318,7 +319,7 @@ Results on TextVQA, DocVQA, OCRBench, OpenCompass MultiModal Avg , MME, MMBench,
         </tr>
     </tbody>
 </table>
-
+</small>
 
 Evaluation results of multilingual LLaVA Bench 
 <div align="center">
