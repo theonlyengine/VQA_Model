@@ -3,10 +3,11 @@ from typing import List, Optional
 import json
 import torch
 import torchvision
+from threading import Thread
 from copy import deepcopy
 from PIL import Image
 from torchvision import transforms
-from transformers import LlamaTokenizer, LlamaPreTrainedModel, LlamaForCausalLM, AutoModel, PreTrainedTokenizerFast
+from transformers import LlamaTokenizer, LlamaPreTrainedModel, LlamaForCausalLM, AutoModel, PreTrainedTokenizerFast, TextIteratorStreamer
 from transformers.models.idefics2.modeling_idefics2 import Idefics2VisionTransformer
 
 from .configuration_minicpm import MiniCPMVConfig
@@ -218,6 +219,25 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
             **kwargs
         )
         return self._decode_text(output, tokenizer)
+    
+    def _decode_stream(self, inputs_embeds, tokenizer, **kwargs):
+        terminators = [
+            tokenizer.eos_token_id,
+            tokenizer.convert_tokens_to_ids("<|eot_id|>")
+        ]
+        streamer = TextIteratorStreamer(tokenizer=tokenizer)
+        generation_kwargs = {
+            'inputs_embeds': inputs_embeds,
+            'pad_token_id': 0,
+            'eos_token_id': terminators,
+            'streamer': streamer
+        }
+        generation_kwargs.update(kwargs)
+
+        thread = Thread(target=self.llm.generate, kwargs=generation_kwargs)
+        thread.start()
+    
+        return streamer
 
     def _decode_text(self, result_ids, tokenizer):
         result_text = []
@@ -294,6 +314,7 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
         max_inp_length: Optional[int] = None,
         vision_hidden_states=None,
         return_vision_hidden_states=False,
+        stream=False,
         **kwargs
     ):
 
@@ -326,7 +347,10 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
                 vision_hidden_states,
             ) = self.get_vllm_embedding(model_inputs)
 
-            result = self._decode(model_inputs["inputs_embeds"], tokenizer, **kwargs)
+            if stream:
+                result = self._decode_stream(model_inputs["inputs_embeds"], tokenizer, **kwargs)
+            else:
+                result = self._decode(model_inputs["inputs_embeds"], tokenizer, **kwargs)
 
         if return_vision_hidden_states:
             return result, vision_hidden_states
@@ -342,6 +366,8 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
         max_new_tokens=1024,
         sampling=True,
         max_inp_length=2048,
+        system_prompt='',
+        stream=False,
         **kwargs
     ):
         if isinstance(msgs, str):
@@ -349,6 +375,7 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
 
         copy_msgs = deepcopy(msgs)
         assert len(copy_msgs) > 0, 'msgs is empty'
+        assert sampling or not stream, 'if use stream mode, make sure sampling=True'
 
         if image is not None and isinstance(copy_msgs[0]['content'], str):
             copy_msgs[0]['content'] = [image, copy_msgs[0]['content']]
@@ -393,6 +420,10 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
         if tgt_sizes:
             tgt_sizes = torch.vstack(tgt_sizes)
 
+        if system_prompt:
+            sys_msg = {'role': 'system', 'content': system_prompt}
+            copy_msgs = [sys_msg] + copy_msgs
+
         input_ids = tokenizer.apply_chat_template(copy_msgs, tokenize=True, add_generation_prompt=False)
 
         if sampling:
@@ -423,11 +454,20 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
                 max_new_tokens=max_new_tokens,
                 vision_hidden_states=vision_hidden_states,
                 return_vision_hidden_states=True,
+                stream=stream,
                 **generation_config
             )
-        answer = res[0]
 
-        return answer 
+        if stream:
+            def stream_gen():
+                for text in res:
+                    text = text.replace(tokenizer.eot_token, '').replace(tokenizer.eos_token, '')
+                    yield text
+            return stream_gen()
+
+        else:
+            answer = res[0]
+            return answer
 
 
 class PreTrainedTokenizerFastWrapper(PreTrainedTokenizerFast):
