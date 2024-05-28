@@ -61,6 +61,12 @@ class MiniCPMV(MiniCPMVPreTrainedModel):
             ]
         )
 
+    def get_input_embeddings(self):
+        return self.llm.get_input_embeddings()
+
+    def set_input_embeddings(self, value):
+        self.llm.embed_tokens = value
+
     def get_vllm_embedding(self, data):
         if 'vision_hidden_states' not in data:
             dtype = self.vpm.embeddings.position_embedding.weight.dtype
