@@ -23,6 +23,7 @@ datasets:
 * [2024.05.23] 🔥🔥🔥 MiniCPM-V tops GitHub Trending and HuggingFace Trending! Our demo, recommended by Hugging Face Gradio’s official account, is available [here](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5). Come and try it out!
 
 <br>
+
 * [2024.06.03] Now, you can run MiniCPM-Llama3-V 2.5 on multiple low VRAM GPUs(12 GB or 16 GB) by distributing the model's layers across multiple GPUs. For more details, Check this [link](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/inference_on_multiple_gpus.md).
 * [2024.05.25] MiniCPM-Llama3-V 2.5 now supports streaming outputs and customized system prompts. Try it at [here](#usage)
 * [2024.05.24]  We release the [MiniCPM-Llama3-V 2.5 gguf](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf), which supports [llama.cpp](https://github.com/OpenBMB/MiniCPM-V/tree/main?tab=readme-ov-file#inference-with-llamacpp) inference and provides a 6~8 token/s smooth decoding on mobile phones. Try it now!
