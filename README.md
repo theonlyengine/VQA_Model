@@ -10,7 +10,7 @@ datasets:
 
 <h1>A GPT-4V Level Multimodal LLM on Your Phone</h1>
 
-[GitHub](https://github.com/OpenBMB/MiniCPM-V) | [Demo](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5)
+[GitHub](https://github.com/OpenBMB/MiniCPM-V) | [Demo](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | <a href="https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/wechat.md" target="_blank"> WeChat</a> 
 
 
 ## News <!-- omit in toc -->
