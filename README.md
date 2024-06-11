@@ -4,7 +4,7 @@ language:
 - en
 - zh
 datasets:
-- HaoyeZhang/RLAIF-V-Dataset
+- openbmb/RLAIF-V-Dataset
 ---
 
 
