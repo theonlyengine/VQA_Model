@@ -2051,7 +2051,7 @@
   },
   "auto_map": {
     "AutoTokenizer": [
-      "modeling_minicpmv.PreTrainedTokenizerFastWrapper",
+      "tokenization_minicpmv_fast.MiniCPMVTokenizerFast",
       null
     ]
   },
@@ -2066,7 +2066,7 @@
   "model_max_length": 1000000000000000019884624838656,
   "pad_token": "!",
   "padding_side": "right",
-  "tokenizer_class": "PreTrainedTokenizerFastWrapper",
+  "tokenizer_class": "MiniCPMVTokenizerFast",
   "truncation_side": "right",
   "unk_token": "<unk>"
 }
