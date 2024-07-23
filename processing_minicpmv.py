@@ -61,14 +61,10 @@ class MiniCPMVProcessor(ProcessorMixin):
         return_tensors: Optional[Union[str, TensorType]] = TensorType.PYTORCH,
     ) -> MiniCPMVBatchFeature:
         """
-        Main method to prepare for the model one or several sequences(s) and image(s). This method forwards the `text`
-        and `kwargs` arguments to LlamaTokenizerFast's [`~LlamaTokenizerFast.__call__`] if `text` is not `None` to encode
-        the text. To prepare the image(s), this method forwards the `images` and `kwrags` arguments to
-        LlavaNextImageProcessor's [`~LlavaNextImageProcessor.__call__`] if `images` is not `None`. Please refer to the doctsring
-        of the above two methods for more information.
+        Only support for single input for now. Batched input is coming soon.
 
         Args:
-            text (`str`, `List[str]`, `List[List[str]]`):
+            text (`str`):
                 The sequence or batch of sequences to be encoded. Each sequence can be a string or a list of strings
                 (pretokenized string). If the sequences are provided as list of strings (pretokenized), you must set
                 `is_split_into_words=True` (to lift the ambiguity with a batch of sequences).
@@ -176,19 +172,19 @@ class MiniCPMVProcessor(ProcessorMixin):
         images, image_sizes, tgt_sizes = images["pixel_values"], images["image_sizes"], images["tgt_sizes"]
 
         image_tags = re.findall(pattern, texts)
-        assert len(image_tags) == len(image_sizes)
+        assert len(image_tags) == len(image_sizes[0])
         text_chunks = texts.split(pattern)
         final_texts = ""
         for i in range(len(image_tags)):
-            final_texts = final_texts + text_chunks[i] + self.image_processor.get_slice_image_placeholder(image_sizes[i])
+            final_texts = final_texts + text_chunks[i] + self.image_processor.get_slice_image_placeholder(image_sizes[0][i])
         final_texts += text_chunks[-1]
         input_ids, image_bounds = self._convert(final_texts, max_length)
         return MiniCPMVBatchFeature(data={
             "input_ids": input_ids,
-            "pixel_values": [images],
-            "image_sizes": [image_sizes],
+            "pixel_values": images,
+            "image_sizes": image_sizes,
             "image_bound": [image_bounds],
-            "tgt_sizes": [tgt_sizes]
+            "tgt_sizes": tgt_sizes
         })
 
     @property
@@ -245,3 +241,4 @@ class MiniCPMVProcessor(ProcessorMixin):
                     tensor[i, : len(item[key][0]), :] = item[key][0].clone()
 
         return tensor
+    

@@ -396,7 +396,7 @@ class MiniCPMVImageProcessor(BaseImageProcessor):
         if tgt_sizes:
             tgt_sizes = np.vstack(tgt_sizes)
         return MiniCPMVBatchFeature(
-            data={"pixel_values": new_images, "image_sizes": image_sizes, "tgt_sizes": tgt_sizes}, tensor_type=return_tensors
+            data={"pixel_values": [new_images], "image_sizes": [image_sizes], "tgt_sizes": [tgt_sizes]}, tensor_type=return_tensors
         )
 
 AutoImageProcessor.register("MiniCPMVImageProcessor", MiniCPMVImageProcessor)

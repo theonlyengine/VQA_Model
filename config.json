@@ -1,5 +1,6 @@
 {
   "_name_or_path": "openbmb/MiniCPM-Llama3-V-2_5",
+  "version": "2.5",
   "architectures": [
     "MiniCPMV"
   ],
