@@ -212,4 +212,11 @@ If you find our work helpful, please consider citing the following papers
   journal={arXiv preprint arXiv:2405.17220},
   year={2024},
 }
+@article{yao2024minicpmvgpt4vlevelmllm,
+  title={MiniCPM-V: A GPT-4V Level MLLM on Your Phone},
+  author={Yao, Yuan and Yu, Tianyu and Zhang, Ao and Wang, Chongyi and Cui, Junbo and Zhu, Hongji and Cai, Tianchi and Li, Haoyu and Zhao, Weilin and He, Zhihui and Chen, Qianyu and Zhou, Huarong and Zou, Zhensheng and Zhang, Haoye and Hu, Shengding and Zheng, Zhi and Zhou, Jie and Cai, Jie and Han, Xu and Zeng, Guoyang and Li, Dahai and Liu, Zhiyuan and Sun, Maosong},
+  journal={arXiv preprint arXiv:2408.01800},
+  year={2024},
+  url={https://arxiv.org/abs/2408.01800},
+}
 ```
